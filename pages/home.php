@@ -30,7 +30,7 @@
     <div>
     <button type="submit" id="logoutbutton" class="logout">Log Out</button>
     <b for="" class="displayname"><?php echo $_SESSION['displayname'];?></b>
-        <a href="Profile.php?ID=<?php echo $_SESSION['ID'];?>" class="profiles">
+        <a href="Profile.php?ID=<?php echo $_SESSION['ID'];?>&pages=home" class="profiles">
     <img src="../asset/images/DefaultProfile.jpg" alt="" srcset="">
     <div class="bottom">
         <p>Account</p>

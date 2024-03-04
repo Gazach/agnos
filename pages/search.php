@@ -1,3 +1,13 @@
+<?php
+session_start();
+require '../function/conn.php';
+
+//random data Generate
+
+$query = "SELECT * FROM user_data";
+
+if(isset($_SESSION['ID']) && isset($_SESSION['displayname'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +27,51 @@
         <i class="ibut"></i>
     </div>
         </a>
-       <h2 class="title">Search</h2>
+       <label for="">Search</label>
     </nav>
+
+    <div class="MainSearch">
+        <div class="bar">
+        <form action="" method="post">
+
+        <input type="text" name="keyword" autofocus placeholder="find user" size="86" class="bar" id="keyword">
+
+        </form>
+        </div>
+    <?php
+        if ($result = mysqli_query($conn, $query)) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $rows[] = $row; 
+            }
+            foreach($rows as $row){
+                ?>
+    <div class="container">
+
+    
+    <a href="Profile.php?ID=<?php echo $row['ID'];?>&pages=Search" class="LINK">
+    <div class="account">
+    <img src="../asset/images/DefaultProfile.jpg" alt="" srcset="" class="pfp">
+    <p>
+    <b for=""><?php echo $row['displayName'] ?></b> <br>
+    <label for=""><?php echo $row['Username'] ?></label>
+    </p>
+    </div>
+    </a>
+
+    </div>
+    
+                <?php
+            }
+        }
+        ?>
+    </div>
+
+    <script src="../function/js/jquery-3.7.1.min.js"></script>
+    <script src="../function/js/search.js"></script>
 </body>
 </html>
+<?php
+ } else {
+    header("Location: ../login.php?error=You Should Login First");
+    exit();
+} ?>

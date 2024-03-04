@@ -20,13 +20,29 @@ if ($_GET['ID']) {
 </head>
 <body>
     <nav>
-        <a href="home.php" class="back">
-        <i class='bx bx-left-arrow-alt bx-lg'></i>
-        <div class="bottom">
-        <p>Back</p>
-        <i class="ibut"></i>
-    </div>
-        </a>
+        <?php 
+        if ($_GET['pages'] == "Search") { ?>
+            <a href="search.php" class="back">
+            <i class='bx bx-left-arrow-alt bx-lg'></i>
+            <div class="bottom">
+            <p>Back</p>
+            <i class="ibut"></i>
+        </div>
+            </a>
+            <?php
+        } else if ($_GET['pages'] == "home"){ ?>
+            <a href="home.php" class="back">
+            <i class='bx bx-left-arrow-alt bx-lg'></i>
+            <div class="bottom">
+            <p>Back</p>
+            <i class="ibut"></i>
+        </div>
+            </a>
+            <?php
+        }
+        ?>
+
+
         <label><?= $row['Username'];?> Profile</label>
     </nav>
     
