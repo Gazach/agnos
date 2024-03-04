@@ -22,7 +22,7 @@
         <a href="search.php" class="search">
         <img src="../asset/images/search.png" alt="" srcset="">
         <div class="bottom">
-        <p>Search</p>
+        <p>Search User</p>
         <i></i>
     </div>
         </a>
@@ -41,7 +41,7 @@
     </nav>
 
     <div class="Main">
-        Content Empty!
+        <h1>Content Still Empty</h1>
     </div>
 </body>
 <script src="../function/js/jsfunction.js"></script>

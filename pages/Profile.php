@@ -5,7 +5,8 @@ $accID = $_GET['ID'];
 $SQLs = "SELECT * FROM user_data WHERE ID='$accID'";
 $result = mysqli_query($conn, $SQLs);
 $row = mysqli_fetch_assoc($result);
-if ($_GET['ID'] == $_SESSION['ID']) {
+if(isset($_SESSION['ID']) && isset($_SESSION['displayname'])){
+if ($_GET['ID']) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,16 +27,41 @@ if ($_GET['ID'] == $_SESSION['ID']) {
         <i class="ibut"></i>
     </div>
         </a>
-        <label>Profile</label>
+        <label><?= $row['Username'];?> Profile</label>
     </nav>
     
     <div class="Personal">
-        <h1>Personal Info</h1>
-    <img src="../asset/images/DefaultProfile.jpg" alt="" srcset="">
-    <h3>Display Name : <?= $row['displayName'];?></h3>
-    <h3>Username : <?= $row['Username'];?></h3>
-    <h3>Email : <?= $row['Email'];?></h3>
-    <h3>Password : <?= $row['Password'];?></h3>
+        <div class="banner">
+            <div class="left"></div>
+            <img src="../asset/images/defaultbanner.jpg" alt="" srcset="" class="banners">
+            <div class="right"></div>
+        </div>
+        <div class="profiles">
+        <div class="profilesinfo">
+        <img src="../asset/images/DefaultProfile.jpg" alt="" srcset="" class="pfp">
+        <div class="name">
+        <label class="displayName"><?= $row['displayName'];?></label>
+        <label class="Username"><?= $row['Username'];?></label>
+        </div>
+        <?php
+            if ($_GET['ID'] == $_SESSION['ID']) {
+        ?>
+            <a href="Settings" align="right" class="edit"><i class='bx bx-pencil'></i> Edit Profile</a>
+        <?php
+            }
+        ?>
+        </div>
+        <div class="ProfileMenu">
+            <a href="#">Post</a>
+            <a href="#">About</a>
+            <a href="#">Friend</a>
+            <a href="#">Picture</a>
+        </div>
+        </div>
+    </div>
+
+    <div class="MainProfile">
+            <h1>Content Still Empty</h1>
     </div>
 </body>
 </html>
@@ -43,4 +69,9 @@ if ($_GET['ID'] == $_SESSION['ID']) {
 } else {
     header("Location: Home.php");
 }
+} else {
+
+    header("Location: ../login.php?error=You Should Login First");
+    exit();
+    }
 ?>

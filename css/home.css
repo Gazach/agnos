@@ -1,7 +1,9 @@
 body{
+    background-color: rgb(3, 17, 40);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    color: white;
 }
 nav{
     display: flex;
@@ -140,4 +142,7 @@ background-color: rgb(30, 58, 97);
     transform:translate(-50%,50%) rotate(45deg);
     background-color:#EEEEEE;
     box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+.Main {
+    background-color: rgb(3, 17, 40);
 }

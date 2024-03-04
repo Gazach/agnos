@@ -8,8 +8,6 @@ nav{
     display: flex;
     height: 70px;
     width: 100%;
-    
-
 }
 nav > img {
     border-radius: 50%;
