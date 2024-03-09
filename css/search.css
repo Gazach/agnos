@@ -17,6 +17,7 @@ nav{
 }
 nav > label {
     margin: auto;
+    margin-left: 50%;
     font-size: x-large;
 
 }

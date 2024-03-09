@@ -62,7 +62,7 @@ if ($_GET['ID']) {
         <?php
             if ($_GET['ID'] == $_SESSION['ID']) {
         ?>
-            <a href="Settings" align="right" class="edit"><i class='bx bx-pencil'></i> Edit Profile</a>
+            <a href="Settings?ID=<?php echo $_SESSION['ID'];?>" align="right" class="edit"><i class='bx bx-pencil'></i> Edit Profile</a>
         <?php
             }
         ?>

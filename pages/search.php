@@ -1,11 +1,7 @@
 <?php
 session_start();
-require '../function/conn.php';
-
-//random data Generate
-
-$query = "SELECT * FROM user_data";
-
+include '../function/conn.php';
+$showQuery = "SELECT * FROM user_data";
 if(isset($_SESSION['ID']) && isset($_SESSION['displayname'])){
 ?>
 <!DOCTYPE html>
@@ -34,12 +30,14 @@ if(isset($_SESSION['ID']) && isset($_SESSION['displayname'])){
         <div class="bar">
         <form action="" method="post">
 
-        <input type="text" name="keyword" autofocus placeholder="find user" size="86" class="bar" id="keyword">
-
+        <input type="text" name="keyword" autofocus placeholder="find username" size="86" class="bar" id="keyword" autocomplete="off">
         </form>
         </div>
-    <?php
-        if ($result = mysqli_query($conn, $query)) {
+
+        <div id="result"></div>
+        <div id="show">
+        <?php
+        if ($result = mysqli_query($conn, $showQuery)) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $rows[] = $row; 
             }
@@ -64,10 +62,46 @@ if(isset($_SESSION['ID']) && isset($_SESSION['displayname'])){
             }
         }
         ?>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+let keyword = document.getElementById('keyword');
+let shows = document.getElementById('result');
+    $(document).keypress(
+  function(event){
+    if (event.which == '13') {
+      event.preventDefault();
+    }
+});
+    $(document).ready(function () {
+        $("#keyword").keyup(function() {
+            let input = $(this).val();
+        if (input != "") {
+            $("#result").css("display", "block");
+            $("#show").css("display", "none");
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    shows.innerHTML = xhr.responseText;
+                    console.log(xhr.responseText);
+                }
+            }
+
+            xhr.open('GET' ,'../function/ajax/findfunction.php?keyword='+ keyword.value, true);
+            xhr.send();
+                        
+        } else {
+            $("#result").css("display", "none");
+            $("#show").css("display", "block");
+        }
+    });
+});
+</script>
     </div>
 
-    <script src="../function/js/jquery-3.7.1.min.js"></script>
-    <script src="../function/js/search.js"></script>
+
 </body>
 </html>
 <?php

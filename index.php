@@ -1,6 +1,13 @@
 <?php
-    header("Location: Welcome.php");
-    exit();
+    session_start();
+    require 'function/conn.php';
+    if(isset($_SESSION['ID']) && isset($_SESSION['displayname'])){
+        header("Location: pages/home.php");
+    } else {
+        header("Location: Welcome.php");
+        exit();
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
