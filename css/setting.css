@@ -1,0 +1,202 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(3, 17, 40);
+}
+i {
+    color: white;
+}
+nav{
+    color: white;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(6, 53, 119);
+}
+.title{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+
+}
+label{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: x-large;
+}
+.back{
+    display:inline-block;
+    position:relative;
+    border-bottom:1px dotted #666;
+    text-align:left; 
+}
+.back .bottom {
+min-width:20px; 
+top:60px;
+left:70%;
+transform:translate(-50%, 0);
+padding:5px 10px;
+color:#444444;
+background-color:#EEEEEE;
+font-weight:normal;
+font-size:13px;
+border-radius:8px;
+position:absolute;
+z-index:99999999;
+box-sizing:border-box;
+box-shadow:0 1px 8px rgba(0,0,0,0.5);
+visibility:hidden; opacity:0; transition:opacity 0.8s;
+}
+.back:hover .bottom {
+visibility:visible; opacity:1;
+}
+.back .bottom .ibut {
+position:absolute;
+bottom:100%;
+left:40%;
+margin-left:-12px;
+width:24px;
+height:12px;
+overflow:hidden;
+}
+.back .bottom .ibut::after {
+content:'';
+position:absolute;
+width:12px;
+height:12px;
+left:50%;
+transform:translate(-50%,50%) rotate(45deg);
+background-color:#EEEEEE;
+box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+.Main {
+    color: white;
+    width: 55%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.Currentusers {
+    background-color: rgb(14, 36, 70);
+    border-radius: 10px;
+    display: flex;
+}
+.pfp {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    margin-left: 50px;
+}
+.userdata{
+    margin-top: 30px;
+    margin-left: 10px;
+    
+}
+.userdata > label {
+    font-size:larger;
+}
+.userdata > svg {
+    color: #ffffff;
+}
+
+.userdata > div>label {
+    font-size:larger;
+}
+.userdata > div>button {
+    background-color: rgb(14, 36, 70);
+    border: none;
+    margin-left: 4px;
+    cursor: pointer;
+}
+.userdata > div>svg {
+    color: #ffffff;
+}
+.notv{
+    display: none;
+}
+.edit{
+    background-color: rgb(98, 175, 239);
+    width: 95%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+
+}
+.edit:hover{
+    background-color: rgb(78, 145, 199);
+}
+.edit>label{
+    font-size: large;
+}
+.editmode{
+    background-color: rgb(14, 36, 70);
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.editmenu{
+    background-color: rgb(14, 36, 70);
+    margin-top: 10px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    display: none;
+}
+.edituser>form >.editable  >label{
+    font-size: large;
+}
+.edituser>.iamgesprofile>img{
+justify-content: center;
+height: 130px;
+width: 130px;
+}
+.iamgesprofile {
+    text-align: center;
+    
+}
+.editable{
+    margin-left: 50px;
+}
+.saveorcancel > button {
+    width: 90%;
+    padding: 10px;
+    margin: 5px;
+    font-size: medium;
+    border: none;
+    border-radius: 20px;
+    color: white;
+}
+.saveorcancel  {
+    margin-top: 20px;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.save{
+    background-color: rgb(53, 192, 90);
+}
+.cancel{
+    background-color: rgb(246, 31, 31);
+}
+.save:hover{
+    background-color: rgb(26, 92, 44);
+}
+.cancel:hover{
+    background-color: rgb(126, 17, 17);
+}
+input{
+    width: 280px;
+    height: 30px;
+    font-size: medium;
+    color: black;
+}
+.editable > label {
+    font: small;
+}

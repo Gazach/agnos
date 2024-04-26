@@ -6,3 +6,15 @@ RewriteRule ^ /%1 [NC,L,R]
 
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+
+
+Options -Indexes
+
+# Prevent access to specific directory
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/(pages|function|css|asset)/$
+RewriteRule .* /404.php [L]
+
+
+
+
