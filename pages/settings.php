@@ -22,8 +22,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['displayname'])) {
             
             $pass = !empty($_POST["pass"]) ? str_replace(' ', '', $_POST["pass"]) : $row['Password'];
 
-            echo "<script>console.log('$pass,$Emails,$displayN')</script>";
-
             $updateSQL = "UPDATE user_data SET Email = '$Emails', Password = '$pass', displayName = '$displayN' WHERE ID = $uSettings";
 
             mysqli_query($conn, $updateSQL);

@@ -144,5 +144,134 @@ background-color: rgb(30, 58, 97);
     box-shadow:0 1px 8px rgba(0,0,0,0.5);
 }
 .Main {
-    background-color: rgb(3, 17, 40);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgb(14, 36, 70);
+    width: 50%;
+    border-radius: 5px;
+}
+
+.addpost {
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+ .textarea {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 20px;
+    line-height: 20px;  
+    font-size: large;
+    border-radius: 50px;
+    border: none;
+    white-space: initial;
+    background-color: white;
+    color: rgb(82, 82, 82);
+  }
+.textarea:hover{
+    cursor:text;
+}
+.poppost{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+.content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    background-color: rgb(15, 37, 72);
+    margin-top: 6%;
+    padding: 15px;
+    border-radius: 7px;
+}
+.content > .posttitle > b {
+    font-size: 25px;
+    position: relative;
+}
+.posttitle{
+    text-align: center;
+}
+.closepost{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin: 2px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 14.5%;
+    background-color: rgb(105, 132, 171);
+    color: white;
+}
+.closepost:hover{
+    background-color: rgb(64, 85, 114);
+    cursor: pointer;
+}
+.postProfile {
+    display: flex;
+}
+.postProfile > img{
+    height: 45px;
+    border-radius: 50%;
+    margin: 10px;
+}
+.areapost {
+    width: 100%;
+    height: 150px;
+    font-size: 17px;
+    resize: none;
+}
+.uploadPost{
+    color: white;
+    background-color: rgb(59, 104, 165);
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    font-size: larger;
+    width: 100%;
+    margin-top: 10px;
+}
+.uploadPost:hover{
+    background-color: rgb(24, 44, 72);
+    cursor: pointer;
+}
+.add_button{
+    color: white;
+    background-color: rgb(59, 104, 165);
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 30px;
+    font-size: medium;
+}
+.add_button:hover{
+    background-color: rgb(34, 61, 100);
+    cursor: pointer;
+}
+.addbutton2{
+    color: white;
+    background-color: rgb(59, 104, 165);
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 30px;
+    font-size: medium;
+    width: 100%;
+}
+.addbutton2:hover{
+    background-color: rgb(34, 61, 100);
+    cursor: pointer;
 }
